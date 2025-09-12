@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+/*--  * select all the html elements and apply the font   --*/
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+@theme {
+  --color-primary: #5044e5;
+}
