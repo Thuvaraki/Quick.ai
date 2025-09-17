@@ -1,4 +1,4 @@
-import { createRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client"; // new way to initialize a React app in React 18+
 import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
