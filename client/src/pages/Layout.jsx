@@ -35,7 +35,6 @@ const Layout = () => {
       <div className="flex-1 w-full flex h-[calc(100vh-64px)]">
         <Sidebar sidebarProp={sidebarProp} setSidebarProp={setSidebarProp} />
         <div className="flex-1 bg-[#F4F7FB]">
-          <p>Outlet works!</p>
           <Outlet />
         </div>
       </div>
