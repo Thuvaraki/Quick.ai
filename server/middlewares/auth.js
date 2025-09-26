@@ -4,7 +4,6 @@ import { clerkClient } from "@clerk/express";
 
 export const auth = async (req, res, next) => {
   try {
-    // const { userId } = req.auth();
     const { userId, has } = req.auth();
     // Pull has function from req.auth().
     // Call has({ plan: "premium" }) to see if user is premium.
