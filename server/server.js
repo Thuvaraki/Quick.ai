@@ -5,6 +5,7 @@ import "dotenv/config"; //preload file that automatically calls .config() to aut
 // import dotenv from "dotenv";
 // dotenv.config();
 import { clerkMiddleware, requireAuth } from "@clerk/express";
+import aiRouter from "./routes/aiRoutes.js";
 
 const app = express();
 app.use(cors()); //cors = Cross-Origin Resource Sharing middleware.
@@ -18,6 +19,8 @@ app.use(clerkMiddleware());
 app.get("/", (req, res) => res.send("Server is Live!"));
 
 app.use(requireAuth()); // The routes defined hereafter, are protected. Which means, Only authenticated users (users who are logged in and have a valid session/JWT/token) can access them
+
+app.use("/api/ai", aiRouter);
 
 // it’s best practice to define all routes before calling app.listen
 const PORT = process.env.PORT || 3000;

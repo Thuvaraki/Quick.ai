@@ -4,12 +4,14 @@ import { clerkClient } from "@clerk/express";
 
 export const auth = async (req, res, next) => {
   try {
-    const { userId } = req.auth;
+    // const { userId } = req.auth();
+    const { userId, has } = req.auth();
+    // Pull has function from req.auth().
+    // Call has({ plan: "premium" }) to see if user is premium.
+    // Store the result (true/false) in hasPremiumPlan.
+    const hasPremiumPlan = await has({ plan: "premium" });
 
     const user = await clerkClient.users.getUser(userId);
-
-    // Check if user has a premium plan from metadata
-    const hasPremiumPlan = user.privateMetadata.plan === "premium";
 
     if (!hasPremiumPlan && user.privateMetadata.free_usage) {
       req.free_usage = user.privateMetadata.free_usage;
