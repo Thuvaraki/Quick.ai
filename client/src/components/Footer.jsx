@@ -31,21 +31,21 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 class="font-semibold text-gray-800 mb-5">
+            <h2 className="font-semibold text-gray-800 mb-5">
               Subscribe to our newsletter
             </h2>
-            <div class="text-sm space-y-2">
+            <div className="text-sm space-y-2">
               <p>
                 The latest news, articles, and resources, sent to your inbox
                 weekly.
               </p>
-              <div class="flex items-center gap-2 pt-4">
+              <div className="flex items-center gap-2 pt-4">
                 <input
-                  class="border border-gray-500/30 placeholder-gray-500 focus:ring-2 ring-indigo-600 outline-none w-full max-w-64 h-9 rounded px-2"
+                  className="border border-gray-500/30 placeholder-gray-500 focus:ring-2 ring-indigo-600 outline-none w-full max-w-64 h-9 rounded px-2"
                   type="email"
                   placeholder="Enter your email"
                 />
-                <button class="bg-primary w-24 h-9 text-white rounded cursor-pointer">
+                <button className="bg-primary w-24 h-9 text-white rounded cursor-pointer">
                   Subscribe
                 </button>
               </div>
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p class="pt-4 text-center text-xs md:text-sm pb-5">
+      <p className="pt-4 text-center text-xs md:text-sm pb-5">
         Copyright 2025 © Thuvaraki. All Right Reserved.
       </p>
     </footer>
