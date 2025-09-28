@@ -47,28 +47,23 @@ Quick.AI is an AI-powered platform that allows users to create articles, blog ti
 ## Installation & Setup
 
 1. Clone the repository:  
-   ```bash
+    ```bash
    git clone https://github.com/yourusername/Quick.AI.git
    cd Quick.AI
-Install dependencies:
+   
+2. Install dependencies:
+  npm install
 
-bash
-Copy code
-npm install
-Create a .env file in the root directory and add the following:
+3. Create a .env file in the root directory and add the following:
+  DATABASE_URL=your_neon_postgres_url
+  VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+  GEMINI_API_KEY=your_gemini_api_key
+  CLIPDROP_API_KEY=your_clipdrop_api_key
+  CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+  CLOUDINARY_API_KEY=your_cloudinary_api_key
+  CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 
-env
-Copy code
-DATABASE_URL=your_neon_postgres_url
-VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-GEMINI_API_KEY=your_gemini_api_key
-CLIPDROP_API_KEY=your_clipdrop_api_key
-CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-Run the development server:
+4. Run the development server:
+  npm run dev
 
-bash
-Copy code
-npm run dev
-Open http://localhost:5173 in your browser.
+5. Open http://localhost:5173 in your browser.
