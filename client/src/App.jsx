@@ -10,11 +10,29 @@ import RemoveObject from "./pages/RemoveObject";
 import ReviewResume from "./pages/ReviewResume";
 import Community from "./pages/Community";
 import { Routes, Route } from "react-router-dom";
+import { useAuth } from "@clerk/clerk-react";
+import { useEffect } from "react";
 
 import { Toaster } from "react-hot-toast";
 // react-hot-toast is a React library for showing toast notifications (small popup messages for success, error, info, etc.).
 
 const App = () => {
+  const { getToken } = useAuth();
+  useEffect(() => {
+    getToken().then((token) => console.log(token));
+  }, []);
+  // useAuth() is a React hook provided by Clerk.
+  // When we call it inside a React component, it gives auth-related info and helper functions about the currently logged-in user.
+  // It typically returns an object like this:
+  // {
+  //   isLoaded, // true if auth state is ready
+  //     isSignedIn, // true if user is logged in
+  //     userId, // the signed-in user’s ID
+  //     sessionId, // current session ID
+  //     getToken; // function to fetch the JWT/token
+  // }
+  // getToken is a function that retrieves a JWT (JSON Web Token) for the signed-in user.
+
   return (
     <div>
       {/* <Toaster /> is a container component that is responsible for rendering all toast notifications in our app. */}
