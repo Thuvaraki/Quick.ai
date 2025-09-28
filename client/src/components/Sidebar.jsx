@@ -73,9 +73,10 @@ const Sidebar = ({ sidebarProp, setSidebarProp }) => {
               <div>
                 <h1 className="text-sm font-medium">{user.fullName}</h1>
                 <p className="text-xs text-gray-500">
+                  {/* <Protect> component comes from Clerk. It is used to conditionally render content based on a user’s plan or authentication status. */}
                   <Protect plan="premium" fallback="Free">
                     Premium
-                  </Protect>
+                  </Protect>{" "}
                   Plan
                 </p>
               </div>

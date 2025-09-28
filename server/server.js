@@ -6,8 +6,13 @@ import "dotenv/config"; //preload file that automatically calls .config() to aut
 // dotenv.config();
 import { clerkMiddleware, requireAuth } from "@clerk/express";
 import aiRouter from "./routes/aiRoutes.js";
+import userRouter from "./routes/userRoutes.js";
+import connectCloudinary from "./configs/cloudinary.js";
 
 const app = express();
+
+await connectCloudinary();
+
 app.use(cors()); //cors = Cross-Origin Resource Sharing middleware.
 // By default, browsers block API requests if the frontend (say running on http://localhost:3000) tries to call a backend running on another origin (say http://localhost:5000).
 // cors() allow frontend to talk backend which is running on another origin.
@@ -21,6 +26,7 @@ app.get("/", (req, res) => res.send("Server is Live!"));
 app.use(requireAuth()); // The routes defined hereafter, are protected. Which means, Only authenticated users (users who are logged in and have a valid session/JWT/token) can access them
 
 app.use("/api/ai", aiRouter);
+app.use("/api/user", userRouter);
 
 // it’s best practice to define all routes before calling app.listen
 const PORT = process.env.PORT || 3000;
