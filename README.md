@@ -7,10 +7,7 @@ Quick.AI is an AI-powered platform that allows users to create articles, blog ti
 ## Features
 
 ### AI Content Generation
-- **Article Writing:** Generate articles with customizable lengths:
-  - 500–800 words
-  - 800–1200 words
-  - 1200+ words  
+- **Article Writing:** Generate articles with customizable lengths: 500–800 words, 800–1200 words, 1200+ words  
 - **Blog Titles:** Generate 6 different types of blog titles using Gemini API.  
 - **Image Generation:** Generate images in 8 styles using ClipDrop API. Users can choose whether to publish images publicly.  
 - **Image Editing:**  
@@ -23,7 +20,7 @@ Quick.AI is an AI-powered platform that allows users to create articles, blog ti
 
 ### User Experience
 - **Home Page:** Displays features, testimonials, plan cards, and a footer.  
-- **User Profile:** Manage your account, view your plan, and ensure security.  
+- **User Profile:** Manage your account, view your plan and switch plan.  
 - **Dashboard:** Shows the number of creations, active plan, and user's recent creations.  
 - **Authentication & Security:**  
   - Sign up, login, and logout handled via **Clerk**.  
@@ -47,23 +44,45 @@ Quick.AI is an AI-powered platform that allows users to create articles, blog ti
 ## Installation & Setup
 
 1. Clone the repository:  
-    ```bash
-   git clone https://github.com/yourusername/Quick.AI.git
-   cd Quick.AI
+
+        git clone https://github.com/Thuvaraki/Quick.ai.git
+        cd Quick.ai
    
-2. Install dependencies:
-  npm install
+2. Setup Server
 
-3. Create a .env file in the root directory and add the following:
-  DATABASE_URL=your_neon_postgres_url
-  VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-  GEMINI_API_KEY=your_gemini_api_key
-  CLIPDROP_API_KEY=your_clipdrop_api_key
-  CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-  CLOUDINARY_API_KEY=your_cloudinary_api_key
-  CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+        cd server
+        npm install
 
-4. Run the development server:
-  npm run dev
+    Create a .env file inside the server folder with the following:
+ 
+        DATABASE_URL = your_neon_postgres_url
+        CLERK_PUBLISHABLE_KEY = your_clerk_publishable_key
+        CLERK_SECRET_KEY = your_clerk_secret_key
+        GEMINI_API_KEY = your_gemini_api_key
+        CLIPDROP_API_KEY = your_clipdrop_api_key
+        CLOUDINARY_CLOUD_NAME = your_cloudinary_cloud_name
+        CLOUDINARY_API_KEY = your_cloudinary_api_key
+        CLOUDINARY_API_SECRET = your_cloudinary_api_secret
 
-5. Open http://localhost:5173 in your browser.
+    Start the backend server:
+
+         nodemon server.js
+
+3. Setup Client
+
+         cd ../client
+         npm install
+
+   Create a .env file inside the client folder with the following:
+
+         VITE_CLERK_PUBLISHABLE_KEY = your_vite_publishable_key
+         VITE_BASE_URL = http://localhost:3000
+
+   Start the frontend:
+
+         npm run dev
+
+7. Access the application
+
+      - Open http://localhost:5173 in your browser.
+     
