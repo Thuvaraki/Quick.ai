@@ -19,7 +19,7 @@ const RemoveObject = () => {
     try {
       setLoading(true);
       if (object.split(" ").length > 1) {
-        return toast("Please ente ronly one object name");
+        return toast.error("Please enter only one object name");
       }
 
       const formData = new FormData();
